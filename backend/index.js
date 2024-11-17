@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import errorHandler from "./middlewares/errorHandler.js";
-const auth = require("./routes/auth");
+import auth from "./routes/auth.js";
 
 dotenv.config();
 
