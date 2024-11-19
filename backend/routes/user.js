@@ -11,15 +11,15 @@ import {
 } from "../controllers/user.js";
 import { protect } from "../middlewares/auth.js";
 
-const router = express.Router();
+const userRouter = express.Router();
 
-router.route("/").put(protect, editUser);
-router.route("/").get(protect, recommendChannels);
-router.route("/likedVideos").get(protect, getLikedVideos);
-router.route("/history").get(protect, getHistory);
-router.route("/feed").get(protect, getFeed);
-router.route("/search").get(protect, searchUser);
-router.route("/:id").get(protect, getProfile);
-router.route("/:id/togglesubscribe").get(protect, toggleSubscribe);
+userRouter.route("/").put(protect, editUser);
+userRouter.route("/").get(protect, recommendChannels);
+userRouter.route("/likedVideos").get(protect, getLikedVideos);
+userRouter.route("/history").get(protect, getHistory);
+userRouter.route("/feed").get(protect, getFeed);
+userRouter.route("/search").get(protect, searchUser);
+userRouter.route("/:id").get(protect, getProfile);
+userRouter.route("/:id/togglesubscribe").get(protect, toggleSubscribe);
 
-export default router;
+export default userRouter;

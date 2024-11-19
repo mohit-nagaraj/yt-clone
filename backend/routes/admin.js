@@ -7,11 +7,11 @@ import {
 } from "../controllers/admin.js";
 import { admin, protect } from "../middlewares/auth.js";
 
-const router = express.Router();
+const adminRouter = express.Router();
 
-router.route("/users").get(protect, admin, getUsers);
-router.route("/videos").get(protect, admin, getVideos);
-router.route("/users/:username").delete(protect, admin, removeUser);
-router.route("/videos/:id").delete(protect, admin, removeVideo);
+adminRouter.route("/users").get(protect, admin, getUsers);
+adminRouter.route("/videos").get(protect, admin, getVideos);
+adminRouter.route("/users/:username").delete(protect, admin, removeUser);
+adminRouter.route("/videos/:id").delete(protect, admin, removeVideo);
 
-export default router;
+export default adminRouter;

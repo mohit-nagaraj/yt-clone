@@ -11,15 +11,15 @@ import {
   searchVideo,
 } from "../controllers/video.js";
 
-const router = express.Router();
+const videoRouter = express.Router();
 
-router.route("/").post(protect, newVideo);
-router.route("/").get(recommendedVideos);
-router.route("/search").get(protect, searchVideo);
-router.route("/:id").get(protect, getVideo);
-router.route("/:id/like").get(protect, likeVideo);
-router.route("/:id/dislike").get(protect, dislikeVideo);
-router.route("/:id/comment").post(protect, addComment);
-router.route("/:id/view").get(protect, newView);
+videoRouter.route("/").post(protect, newVideo);
+videoRouter.route("/").get(recommendedVideos);
+videoRouter.route("/search").get(protect, searchVideo);
+videoRouter.route("/:id").get(protect, getVideo);
+videoRouter.route("/:id/like").get(protect, likeVideo);
+videoRouter.route("/:id/dislike").get(protect, dislikeVideo);
+videoRouter.route("/:id/comment").post(protect, addComment);
+videoRouter.route("/:id/view").get(protect, newView);
 
-export default router;
+export default videoRouter;
